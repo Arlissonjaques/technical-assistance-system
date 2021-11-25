@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   validates :name, :email, presence: true
+  enum role: %i[employee manager admin]
 end
