@@ -3,7 +3,7 @@ class ServiceRequisition < ApplicationRecord
   belongs_to :client
   belongs_to :device
 
-  validates :others_withdraw, :withdrawal_forecast, :price, :status
+  validates :others_withdraw, :withdrawal_forecast, :price, :status,
             :delivery_forecast, :initial_problem, :signed_service_order, 
             presence: true
 end
