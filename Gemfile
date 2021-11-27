@@ -46,6 +46,8 @@ group :development, :test do
   gem 'faker'
   # Generates Brazilian CPF numbers for use in testing.
   gem 'cpf_faker'
+  # A runtime developer console and IRB alternative with powerful introspection capabilities.
+  gem 'pry'
 end
 
 group :development do
