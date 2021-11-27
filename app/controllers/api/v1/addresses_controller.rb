@@ -1,12 +1,6 @@
 class Api::V1::AddressesController < ApplicationController
-  before_action :set_address, only: [:show, :update, :destroy]
+  before_action :set_address, only: [:show, :update]
   before_action :authenticate_api_user!
-
-  def index
-    @addresses = Address.all
-
-    render json: @addresses
-  end
 
   def show
     render json: @address
@@ -28,10 +22,6 @@ class Api::V1::AddressesController < ApplicationController
     else
       render json: @address.errors, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @address.destroy
   end
 
   private
