@@ -62,3 +62,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'cpf_validator'
 # Token based authentication for Rails JSON APIs. Read more: https://github.com/lynndylanhurley/devise_token_auth
 gem 'devise_token_auth'
+# ActiveModel::Serializer implementation and Rails hooks
+gem 'active_model_serializers'
