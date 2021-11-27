@@ -1,4 +1,5 @@
 class Address < ApplicationRecord
+  has_one :client
 
   validates :street, :district, :complement, presence: true
   validates :number, length: { maximum: 4 }
