@@ -9,7 +9,7 @@ class Api::V1::AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
 
-    if @address.save!
+    if @address.save
       render json: @address, status: :created
     else
       render json: @address.errors, status: :unprocessable_entity
