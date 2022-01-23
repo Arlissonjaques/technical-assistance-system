@@ -137,12 +137,17 @@ RSpec.describe 'Addresses', type: :request do
       end
 
       context 'with invalid parameters' do
+        before do
+          put api_v1_address_path(address.id), headers: authentication_headers,
+          params: { addresses: { 'street': '' } }
+        end
+
         it 'should return status 422 :unprocessable_entity' do
-          # TO DO: encontrar forma melhor de testar este caso. 01/12/2021 21:57
-          expect { 
-            put api_v1_address_path(address.id), headers: authentication_headers,
-            params: { addresses: { 'street': '' } }
-          }.to raise_error {  ActiveRecord::RecordInvalid }
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        it 'should return error message' do
+          expect(json_parse).to eq({'street' => ["can't be blank"]})
         end
       end
     end
