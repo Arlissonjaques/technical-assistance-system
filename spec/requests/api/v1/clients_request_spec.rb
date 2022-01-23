@@ -190,7 +190,7 @@ RSpec.describe 'Clients', type: :request do
         end
 
         it 'should return status 422 :unprocessable_entity' do
-          expect(response).to have_http_status(422)
+          expect(response).to have_http_status(:unprocessable_entity)
         end
 
         it 'should return error message' do
