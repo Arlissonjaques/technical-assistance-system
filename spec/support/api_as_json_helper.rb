@@ -1,6 +1,5 @@
 module ApiAsJsonHelper
   def json_parse
-    # binding.pry
     JSON.parse(response.body)
   end
 
