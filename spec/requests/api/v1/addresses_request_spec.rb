@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Addresses', type: :request do
   include ApiAsJsonHelper
 
-  describe 'GET /addresses/:id' do
+  describe 'GET api/v1/addresses/:id' do
     let(:address) { create(:address) }
 
     context 'with authentication' do
@@ -37,7 +37,7 @@ RSpec.describe 'Addresses', type: :request do
     end
   end
 
-  describe 'POST /addresses' do
+  describe 'POST api/v1/addresses' do
     let!(:address_params) { JSON.parse(attributes_for(:address).to_json) }
 
     context 'with authentication' do
@@ -115,7 +115,7 @@ RSpec.describe 'Addresses', type: :request do
     end
   end
 
-  describe 'UPDATE /addresses/:id' do
+  describe 'UPDATE api/v1/addresses/:id' do
     let(:address) { create(:address) }
 
     context 'with authentication' do
