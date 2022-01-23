@@ -190,7 +190,6 @@ RSpec.describe 'Clients', type: :request do
         end
 
         it 'should return status 422 :unprocessable_entity' do
-          # TO DO: encontrar forma melhor de testar este caso. 16/01/2022 20:56
           expect(response).to have_http_status(422)
         end
 
