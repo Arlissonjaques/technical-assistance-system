@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :addresses
       resources :clients
+      resources :devices
     end
   end
 end
